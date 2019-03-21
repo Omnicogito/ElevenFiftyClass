@@ -33,9 +33,9 @@ namespace _03_Unit_Tests
             EventRepository eventRepository = new EventRepository();
             
 
-            Event @event1 = new Event(EventType.Concert, 45, "12/12/12", 45000m, 1000m);
-            Event @event2 = new Event(EventType.Concert, 60, "11/11/11", 60000m, 1000m);
-            Event @event3 = new Event(EventType.Bowling, 25, "10/10/10", 2500m, 100m);
+            Event @event1 = new Event(EventType.Concert, 45, DateTime.Now, 45000m, 1000m);
+            Event @event2 = new Event(EventType.Concert, 60, DateTime.Now, 60000m, 1000m);
+            Event @event3 = new Event(EventType.Bowling, 25, DateTime.Now, 2500m, 100m);
 
             eventRepository.AddNewEvent(@event1);
             eventRepository.AddNewEvent(@event2);
@@ -56,9 +56,9 @@ namespace _03_Unit_Tests
             EventRepository eventRepository = new EventRepository();
 
 
-            Event @event1 = new Event(EventType.Concert, 45, "12/12/12", 45000m, 1000m);
-            Event @event2 = new Event(EventType.Concert, 60, "11/11/11", 60000m, 1000m);
-            Event @event3 = new Event(EventType.Bowling, 25, "10/10/10", 2500m, 100m);
+            Event @event1 = new Event(EventType.Concert, 45, DateTime.Now, 45000m, 1000m);
+            Event @event2 = new Event(EventType.Concert, 60, DateTime.Now, 60000m, 1000m);
+            Event @event3 = new Event(EventType.Bowling, 25, DateTime.Now, 2500m, 100m);
 
             eventRepository.AddNewEvent(@event1);
             eventRepository.AddNewEvent(@event2);

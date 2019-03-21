@@ -44,10 +44,11 @@ namespace _04_Unit_Test
             badgeRepo.AddDoorOnBadge(badge1, doors, door1);
             badgeRepo.AddDoorOnBadge(badge1, doors, door2);
 
-            badgeRepo.RemoveAllDoorOnABadge(badge1);
+            List<string> blah = badgeRepo.RemoveAllDoorOnABadge(badge1, doors);
 
+            int actual = blah.Count;
             int expected = 0;
-            int actual = doors.Count;
+            //int actual = badgeRepo.ListAllBadgers.Count;
 
             Assert.AreEqual(expected, actual);
         }
