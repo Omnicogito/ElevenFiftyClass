@@ -28,7 +28,7 @@ namespace _08_Test
         {
             DriverRepository driverRepository = new DriverRepository();
 
-            Driver driver = new Driver(1, 1, 1, 1);
+            Driver driver = new Driver("Jebediah", 1, 1, 1, 1);
 
             decimal expected = 135m;
 

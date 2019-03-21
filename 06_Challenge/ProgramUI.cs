@@ -97,7 +97,7 @@ namespace _06_Challenge
 
         private void UpdateExistingVehicle()
         {
-            //DriveType driveType = DriveTypeSelector();
+            DriveType driveType = DriveTypeSelector();
 
             PrintEachVehicle();
 
@@ -203,7 +203,7 @@ namespace _06_Challenge
         {
             DriveType driveType = DriveTypeSelector();
 
-            PrintEachVehicle(driveType);
+            PrintEachVehicle();
 
             Console.ReadLine();
         }

@@ -22,7 +22,7 @@ namespace _06_Unit_Test
             vehicleRepository.AddVehicleToRepository(vehicle3, DriveType.ElectricDrive);
 
             int expected = 3;
-            int actual = vehicleRepository.ShowAllVehicles(DriveType.ElectricDrive).Count;
+            int actual = vehicleRepository.ShowAllVehicles().Count;
 
             Assert.AreEqual(expected, actual);
         }
@@ -37,9 +37,9 @@ namespace _06_Unit_Test
 
             vehicleRepository.AddVehicleToRepository(vehicle, DriveType.ElectricDrive);
 
-            vehicleRepository.UpdateVehicleMileageInRepository(vehicle, DriveType.ElectricDrive, 32, 45);
+            vehicleRepository.UpdateVehicleMileageInRepository(12345, DriveType.ElectricDrive, 45);
 
-            vehicles = vehicleRepository.ShowAllVehicles(DriveType.ElectricDrive);
+            vehicles = vehicleRepository.ShowAllVehicles();
 
             bool actual = vehicles.Exists(x => x.Mileage == 32);
 
@@ -51,13 +51,13 @@ namespace _06_Unit_Test
             VehicleRepository vehicleRepository = new VehicleRepository();
             List<Vehicle> vehicles = new List<Vehicle>();
 
-            Vehicle vehicle = new Vehicle("Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
+            Vehicle vehicle = new Vehicle(12345, "Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
 
             vehicleRepository.AddVehicleToRepository(vehicle, DriveType.ElectricDrive);
 
-            vehicleRepository.UpdateVehicleNumberOfBabySealsKilled(vehicle, DriveType.ElectricDrive, 2, 0);
+            vehicleRepository.UpdateVehicleNumberOfBabySealsKilled(12345, DriveType.ElectricDrive, 0);
 
-            vehicles = vehicleRepository.ShowAllVehicles(DriveType.ElectricDrive);
+            vehicles = vehicleRepository.ShowAllVehicles();
 
             bool actual = vehicles.Exists(x => x.NumberOfBabySealsKilled == 2);
 
@@ -69,13 +69,13 @@ namespace _06_Unit_Test
             VehicleRepository vehicleRepository = new VehicleRepository();
             List<Vehicle> vehicles = new List<Vehicle>();
 
-            Vehicle vehicle = new Vehicle("Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
+            Vehicle vehicle = new Vehicle(12345, "Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
 
             vehicleRepository.AddVehicleToRepository(vehicle, DriveType.ElectricDrive);
 
-            vehicleRepository.UpdateVehicleMilesDriven(vehicle, DriveType.ElectricDrive, 324000, 455500);
+            vehicleRepository.UpdateVehicleMilesDriven(12345, DriveType.ElectricDrive, 455500);
 
-            vehicles = vehicleRepository.ShowAllVehicles(DriveType.ElectricDrive);
+            vehicles = vehicleRepository.ShowAllVehicles();
 
             bool actual = vehicles.Exists(x => x.MilesDriven == 324000);
 
@@ -87,13 +87,13 @@ namespace _06_Unit_Test
             VehicleRepository vehicleRepository = new VehicleRepository();
             List<Vehicle> vehicles = new List<Vehicle>();
 
-            Vehicle vehicle = new Vehicle("Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
+            Vehicle vehicle = new Vehicle(12345, "Honda", "Accord", 2013, DriveType.ElectricDrive, 32, 34000m, 324000, 2);
 
             vehicleRepository.AddVehicleToRepository(vehicle, DriveType.ElectricDrive);
 
-            vehicleRepository.UpdateVehicleCost(vehicle, DriveType.ElectricDrive, 34000, 455500);
+            vehicleRepository.UpdateVehicleCost(12345, DriveType.ElectricDrive, 455500);
 
-            vehicles = vehicleRepository.ShowAllVehicles(DriveType.ElectricDrive);
+            vehicles = vehicleRepository.ShowAllVehicles();
 
             bool actual = vehicles.Exists(x => x.MilesDriven == 34000);
 
