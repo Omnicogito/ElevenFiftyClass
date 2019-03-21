@@ -8,6 +8,7 @@ namespace _08_Challenge
 {
     public class Driver
     {
+        public int ID { get; set; }
         public string DriverName { get; set; }
         public int OutOfLane { get; set; }
         public int Speeding { get; set; }
@@ -15,8 +16,9 @@ namespace _08_Challenge
         public int Tailgate { get; set; }
 
         public Driver() { }
-        public Driver(string driverName, int outOfLane, int speeding, int runStopSign, int tailgate)
+        public Driver(int id, string driverName, int outOfLane, int speeding, int runStopSign, int tailgate)
         {
+            ID = id;
             DriverName = driverName;
             OutOfLane = outOfLane;
             Speeding = speeding;

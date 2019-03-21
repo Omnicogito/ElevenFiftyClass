@@ -59,6 +59,24 @@ namespace _06_Challenge
 
         }
 
+        public List<Vehicle> ShowAllVehiclesOfAType(DriveType driveType)
+        {
+            switch (driveType)
+            {
+                case DriveType.ElectricDrive:
+                    return _electricVehicles;
+
+                case DriveType.GasDrive:
+                    return _gasVehicles;
+
+                case DriveType.HybridDrive:
+                    return _hybridVeicles;
+
+                default:
+                    return _electricVehicles;
+            }
+        }
+
         public bool DeleteVehicle(DriveType driveType, string make, string model, int milesDriven)
         {
             bool complete = false;

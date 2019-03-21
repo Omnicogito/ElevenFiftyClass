@@ -11,13 +11,22 @@ namespace _04_Challenge
         Badge myBadge = new Badge();
         Dictionary< int, List<string>> _access = new Dictionary< int, List<string>>();
 
-        public int AddBadgeToDic(List<string> doors)
+        public bool AddBadgeToDic(int ID, List<string> doors)
+        {
+            //int count = _access.Count();
+            //int mybadge = count += 12350;
+            Badge badge = new Badge(ID, doors);
+            _access.Add(badge.MyBadge, badge.Doors);
+            return true;
+
+        }
+
+        public int CreateNewBadge()
         {
             int count = _access.Count();
             int mybadge = count += 12350;
-            Badge badge = new Badge(mybadge, doors);
-            _access.Add(badge.MyBadge, badge.Doors);
             return mybadge;
+
         }
 
         public void RemoveDoorOnBadge(int badge, List<string> doors, string door)

@@ -27,8 +27,9 @@ namespace _06_Challenge
                     "2. Update Existing Vehicle\n" +
                     "3. Delete Existing Vehicle\n" +
                     "4. View Details on Existing Vehicle\n" +
-                    "5. View all vehicles on specified list\n" +
-                    "6. Exit Application\n");
+                    "5. View all Vehicles\n" +
+                    "6. View all Vehicles of a Certain Type\n" +
+                    "7. Exit Application\n");
 
                 int menuSelection = int.Parse(Console.ReadLine());
 
@@ -50,10 +51,19 @@ namespace _06_Challenge
                         ViewAllVehiclesOnSpecifiedList();
                         break;
                     case 6:
+                        ViewAllVehicles();
+                        break;
+                    case 7:
                         isRunning = false;
                         break;
                 }
             }
+        }
+
+        private void ViewAllVehicles()
+        {
+            DriveType driveType = DriveTypeSelector();
+            VehicleRepository.ShowAllVehiclesOfAType(driveType);
         }
 
         private void CreateNewVehicle()
@@ -67,11 +77,6 @@ namespace _06_Challenge
             Console.WriteLine("Please enter the Year of the Vehicle: ");
             int year = int.Parse(Console.ReadLine());
 
-            /*Console.WriteLine("Please use 1 to 3 to select the proper Drive Type: \n" +
-                "1. Electric\n" +
-                "2. Hybrid\n" +
-                "3. Gas\n");
-            int driveChoice = int.Parse(Console.ReadLine());*/
             DriveType driveType = DriveTypeSelector();
 
             Console.WriteLine("Please enter Vehicle Mileage: ");
@@ -145,7 +150,7 @@ namespace _06_Challenge
                     Console.WriteLine("Please enter ID of the record you would like to update: ");
                     int id4 = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Please enter New Miles Driven: ");
+                    Console.WriteLine("Please enter New Number of Baby Seals Killed: ");
                     int newSeals = int.Parse(Console.ReadLine());
 
                     VehicleRepository.UpdateVehicleNumberOfBabySealsKilled(id4, driveType, newSeals);

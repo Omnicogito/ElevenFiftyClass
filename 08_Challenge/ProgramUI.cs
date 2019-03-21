@@ -53,7 +53,7 @@ namespace _08_Challenge
 
             foreach (Driver vehicle in drivers)
             {
-                Console.WriteLine($"Driver Name: {vehicle.DriverName}\nOut of Lanes: {vehicle.OutOfLane}\nRan Stop Signs: {vehicle.RunStopSign} \nSpeeding:{vehicle.Speeding} \nTailgating Events: {vehicle.Tailgate}\n");
+                Console.WriteLine($"Driver ID: {vehicle.ID}\nDriver Name: {vehicle.DriverName}\nOut of Lanes: {vehicle.OutOfLane}\nRan Stop Signs: {vehicle.RunStopSign} \nSpeeding:{vehicle.Speeding} \nTailgating Events: {vehicle.Tailgate}\n");
             }
 
             Console.WriteLine("Please enter name of diver you would like to calculate the premium of: ");
@@ -63,7 +63,7 @@ namespace _08_Challenge
 
             decimal cost = _driverRepository.CalculateDriverDebt(selected);
 
-            Console.WriteLine($"Monthy premium is {cost.ToString("C2")}");
+            Console.WriteLine($"{selected.DriverName} your monthy premium is {cost.ToString("C2")}");
             Console.ReadLine();
         }
 
@@ -84,7 +84,9 @@ namespace _08_Challenge
             Console.WriteLine("Please enter the number of time the drvier has tailgated another vehicle: ");
             int tailgating = int.Parse(Console.ReadLine());
 
-            Driver driver = new Driver(driverName, outOfLane, speeding, runStopSign, tailgating);
+            int id = 12345 + _driverRepository.ReturnListOfDrivers().Count;
+
+            Driver driver = new Driver(id, driverName, outOfLane, speeding, runStopSign, tailgating);
 
             _driverRepository.AddNewDriverToSystem(driver);
 

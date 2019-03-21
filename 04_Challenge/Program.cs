@@ -10,6 +10,8 @@ namespace _04_Challenge
     {
         static void Main(string[] args)
         {
+            ProgramUI programUI = new ProgramUI();
+            programUI.Run();
         }
     }
 }
