@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01_Challenge
+namespace _06_Challenge
 {
     class Program
     {
