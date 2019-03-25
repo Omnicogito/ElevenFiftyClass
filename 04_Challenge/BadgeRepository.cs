@@ -33,31 +33,51 @@ namespace _04_Challenge
         {
             List<string> vs = doors;
 
-            string removedDoor = vs.Find(p => p.Contains(door));
+            //string removedDoor = vs.Find(p => p.Contains(door));
             /*foreach(var rd in removedDoor)
             {
                 doors.Remove(rd);
             }*/
 
-            doors.Remove(removedDoor);
+            vs.RemoveAll(p => p.Contains(door));
+
+            //doors.Remove(removedDoor);
 
             doors = vs;
 
         }
 
-        public string AddDoorOnBadge(int badge, List<string> doors, string door)
+        public bool AddDoorOnBadge(int badge, List<string> doors, string door)
         {
-            doors.Add(door);
-            return door;
+            List<string> stings = new List<string>();
+
+            List<string> bb = new List<string>();
+
+            if (_access.TryGetValue(badge, out bb)) 
+            {
+                bb.AddRange(doors);
+                return true;
+            };
+
+            return false;
         }
 
-        public List<string> RemoveAllDoorOnABadge(int badge, List<string> doors)
+        public bool RemoveAllDoorOnABadge(int badge)
         {
-            List<string> vs = new List<string>();
-            doors = vs;
 
-            return doors;
+            List<string> stings = new List<string>();
 
+            List<string> bb = new List<string>();
+
+            _access = ListAllBadgers();
+
+            if (_access.TryGetValue(badge, out bb))
+            {
+                bb = stings;
+                return true;
+            };
+
+            return false;
         }
 
         public Dictionary<int, List<string>> ListAllBadgers()

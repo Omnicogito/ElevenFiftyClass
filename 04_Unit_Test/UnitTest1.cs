@@ -16,10 +16,8 @@ namespace _04_Unit_Test
         [TestMethod]
         public void AddBadgeShouldBeTrue()
         {
-            int expected = 12350;
-            int actual = badgeRepo.AddBadgeToDic(doors);
+            Assert.IsTrue(badgeRepo.AddBadgeToDic(12350, doors));
 
-            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void RemoveDoorShouldBeTrue()
@@ -38,19 +36,15 @@ namespace _04_Unit_Test
         [TestMethod]
         public void RemoveAllDoors()
         {
-            int badge1 = myBadge.MyBadge;
+            int badge1 = badgeRepo.CreateNewBadge();
             string door1 = "A2";
             string door2 = "B2";
+            doors.Add(door1);
+            doors.Add(door2);
             badgeRepo.AddDoorOnBadge(badge1, doors, door1);
             badgeRepo.AddDoorOnBadge(badge1, doors, door2);
 
-            List<string> blah = badgeRepo.RemoveAllDoorOnABadge(badge1, doors);
-
-            int actual = blah.Count;
-            int expected = 0;
-            //int actual = badgeRepo.ListAllBadgers.Count;
-
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(badgeRepo.RemoveAllDoorOnABadge(badge1));
         }
     }
 }

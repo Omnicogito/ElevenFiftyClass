@@ -171,15 +171,7 @@ namespace _06_Challenge
             Console.WriteLine("Please enter ID of vehicle you wish to remove: ");
             int result = int.Parse(Console.ReadLine());
 
-            foreach (Vehicle vehicle in _vehicles)
-            {
-                if (vehicle.ID == result)
-                {
-                    _vehicles.Remove(vehicle);
-                    break;
-                }
-            }
-
+            _vehicles.RemoveAll(p => p.ID == result);
 
         }
 
@@ -194,7 +186,7 @@ namespace _06_Challenge
             Console.WriteLine("Please enter ID of vehicle you wish to view: ");
             int result = int.Parse(Console.ReadLine());
 
-            foreach(Vehicle vehicle in _vehicles)
+            foreach (Vehicle vehicle in _vehicles)
             {
                 if (vehicle.ID == result)
                 {
